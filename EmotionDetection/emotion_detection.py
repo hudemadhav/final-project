@@ -21,14 +21,13 @@ def emotion_detector(text_to_analyze):
         dominant_emotion = None
         empty_output = {'anger': anger_score,'disgust': disgust_score,'fear': fear_score,'joy': joy_score,'sadness': sadness_score,'dominant_emotion': dominant_emotion}
         return empty_output
-    else:
-        formatted_output = json.loads(response.text)
-        anger_score = formatted_output["emotionPredictions"][0]["emotion"]["anger"]
-        disgust_score = formatted_output["emotionPredictions"][0]["emotion"]["disgust"]
-        fear_score = formatted_output["emotionPredictions"][0]["emotion"]["fear"]
-        sadness_score = formatted_output["emotionPredictions"][0]["emotion"]["sadness"]
-        joy_score = formatted_output["emotionPredictions"][0]["emotion"]["joy"]
-        emotion = formatted_output["emotionPredictions"][0]["emotion"]
-        dominant_emotion = max(emotion, key=emotion.get)
-        final_output = {'anger': anger_score,'disgust': disgust_score,'fear': fear_score,'joy': joy_score,'sadness': sadness_score,'dominant_emotion': dominant_emotion}
-        return final_output
+    formatted_output = json.loads(response.text)
+    anger_score = formatted_output["emotionPredictions"][0]["emotion"]["anger"]
+    disgust_score = formatted_output["emotionPredictions"][0]["emotion"]["disgust"]
+    fear_score = formatted_output["emotionPredictions"][0]["emotion"]["fear"]
+    sadness_score = formatted_output["emotionPredictions"][0]["emotion"]["sadness"]
+    joy_score = formatted_output["emotionPredictions"][0]["emotion"]["joy"]
+    emotion = formatted_output["emotionPredictions"][0]["emotion"]
+    dominant_emotion = max(emotion, key=emotion.get)
+    final_output = {'anger': anger_score,'disgust': disgust_score,'fear': fear_score,'joy': joy_score,'sadness': sadness_score,'dominant_emotion': dominant_emotion}
+    return final_output
