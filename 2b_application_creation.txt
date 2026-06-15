@@ -1,0 +1,4 @@
+ from emotion_detection import emotion_detector
+>>> emotion_detector("I Love this new technolo.")
+'{"emotionPredictions":[{"emotion":{"anger":0.006695325, "disgust":0.0019978383, "fear":0.016372489, "joy":0.99130195, "sadness":0.020773027}, "target":"", "emotionMentions":[{"span":{"begin":0, "end":29, "text":"I Love this new technologies."}, "emotion":{"anger":0.006695325, "disgust":0.0019978383, "fear":0.016372489, "joy":0.99130195, "sadness":0.020773027}}]}], "producerId":{"name":"Ensemble Aggregated Emotion Workflow", "version":"0.0.1"}}'
+>>>
